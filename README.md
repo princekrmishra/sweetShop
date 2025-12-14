@@ -1,27 +1,27 @@
 <!-- PROJECT SCREENSHOTS -->
 
 <p align="center">
-  <img src="login.png" width="100%" />
+  <img src="./frontend/public/login.png" width="100%" />
 </p>
 
 <p align="center">
-  <img src="register.png" width="100%" />
+  <img src="./frontend/public/register.png" width="100%" />
 </p>
 
 <p align="center">
-  <img src="sweets.png" width="100%" />
+  <img src="./frontend/public/sweets.png" width="100%" />
 </p>
 
 <p align="center">
-  <img src="search.png" width="100%" />
+  <img src="./frontend/public/search.png" width="100%" />
 </p>
 
 <p align="center">
-  <img src="admin.png" width="100%" />
+  <img src="./frontend/public/admin.png" width="100%" />
 </p>
 
 <p align="center">
-  <img src="order.png" width="100%" />
+  <img src="./frontend/public/order.png" width="100%" />
 </p>
 
 ---
