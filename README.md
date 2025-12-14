@@ -183,18 +183,21 @@ UPDATE users SET role = 'ADMIN' WHERE email = 'admin@email.com';
 ```ChatGPT```
 
 ## How AI Was Used
-
+```
 -- Architectural planning and API design discussions
 -- Debugging runtime and integration issues
 -- Refining UI/UX consistency
 -- Assistance with error resolution (Neon + Drizzle constraints)
 -- Improving code readability and structure
+```
 
 ## Reflection
 
+```
 -- AI significantly improved productivity by accelerating problem-solving and providing architectural guidance.
 -- All AI-generated suggestions were reviewed, adapted, and validated manually.
 -- The final implementation reflects my own understanding and decision-making, with AI acting as a supportive development tool.
+```
 
 ## Deliverables Checklist
 ```
