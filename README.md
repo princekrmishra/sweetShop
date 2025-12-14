@@ -105,7 +105,7 @@ This project follows the **requirements and guidelines defined in the AI Kata PR
 - Atomic updates (Neon-compatible, no transactions)
 
 ## 🗂️ Project Structure
-sweet-shop/
+```sweet-shop/
 ├── backend/
 │ ├── src/
 │ │ ├── routes/
@@ -127,6 +127,7 @@ sweet-shop/
 │
 ├── screenshots/
 └── README.md
+```
 
 ## Backend Setup
 cd backend
