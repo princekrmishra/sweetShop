@@ -3,11 +3,15 @@ import cors from "cors";
 import authRoutes from "./modules/auth/auth.routes";
 import { requireAuth } from "./middlewares/requireAuth";
 import { requireAdmin } from "./middlewares/requireAdmin";
+import sweetsRoutes from "./modules/sweets/sweets.routes";
+import inventoryRoutes from "./modules/inventory/inventory.routes";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/api/sweets", sweetsRoutes);
+app.use("/api", inventoryRoutes);
 
 app.get("/health", (_, res) => {
   res.json({ status: "OK" });
