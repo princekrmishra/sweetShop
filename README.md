@@ -165,7 +165,8 @@ After registering a user, promote them to admin directly in the database:
 UPDATE users SET role = 'ADMIN' WHERE email = 'admin@email.com';
 
 ## Application Flow
-```/                  → Redirects to /login
+```
+/                  → Redirects to /login
 /login             → User login
 /register          → User registration
 /sweets            → Browse & search sweets
@@ -196,7 +197,7 @@ UPDATE users SET role = 'ADMIN' WHERE email = 'admin@email.com';
 -- The final implementation reflects my own understanding and decision-making, with AI acting as a supportive development tool.
 
 ## Deliverables Checklist
-
+```
 ✅ Full-stack working application
 ✅ RESTful backend with authentication
 ✅ Database integration (PostgreSQL)
@@ -204,10 +205,12 @@ UPDATE users SET role = 'ADMIN' WHERE email = 'admin@email.com';
 ✅ Screenshots of final application
 ✅ AI usage disclosure
 ✅ Clean and readable codebase
+```
 
 ## Author
 
-```Prince Kumar Mishra
+```
+Prince Kumar Mishra
 B.E. Computer Science
 Full-Stack Developer (Aspiring)
 ```
