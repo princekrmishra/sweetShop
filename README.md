@@ -130,30 +130,33 @@ This project follows the **requirements and guidelines defined in the AI Kata PR
 ```
 
 ## Backend Setup
-cd backend
+```cd backend
 npm install
+```
 
 ## Create a .env file:
-DATABASE_URL=your_neon_database_url
+```DATABASE_URL=your_neon_database_url
 JWT_SECRET=your_jwt_secret
 PORT=4000
+```
 
 ## Run database migrations:
-npm run db:push
+```npm run db:push```
 
 ## Start the backend server:
-npm run dev
+```npm run dev```
 
 ## Backend runs at:
-http://localhost:4000
+```http://localhost:4000```
 
 ## Frontend Setup
-cd frontend
+```cd frontend
 npm install
 npm run dev
+```
 
 ## Frontend runs at:
-http://localhost:3000
+```http://localhost:3000```
 
 
 ## Admin Account Setup
@@ -162,31 +165,28 @@ After registering a user, promote them to admin directly in the database:
 UPDATE users SET role = 'ADMIN' WHERE email = 'admin@email.com';
 
 ## Application Flow
-/                  → Redirects to /login
+```/                  → Redirects to /login
 /login             → User login
 /register          → User registration
 /sweets            → Browse & search sweets
 /purchase/:id      → Purchase a sweet
 /admin             → Admin panel (ADMIN only)
+```
 
 ## My AI Usage
 
-AI tools were used responsibly and transparently during development.
+```AI tools were used responsibly and transparently during development.```
 
 ## Tools Used
 
-ChatGPT
+```ChatGPT```
 
 ## How AI Was Used
 
 -- Architectural planning and API design discussions
-
 -- Debugging runtime and integration issues
-
 -- Refining UI/UX consistency
-
 -- Assistance with error resolution (Neon + Drizzle constraints)
-
 -- Improving code readability and structure
 
 ## Reflection
@@ -198,33 +198,16 @@ ChatGPT
 ## Deliverables Checklist
 
 ✅ Full-stack working application
-
 ✅ RESTful backend with authentication
-
 ✅ Database integration (PostgreSQL)
-
 ✅ Modern SPA frontend
-
 ✅ Screenshots of final application
-
 ✅ AI usage disclosure
-
 ✅ Clean and readable codebase
 
 ## Author
 
-Prince Kumar Mishra
+```Prince Kumar Mishra
 B.E. Computer Science
 Full-Stack Developer (Aspiring)
-
-## Future Enhancements
-
--- Order history
-
--- Real payment gateway integration
-
--- Server-side middleware protection
-
--- Advanced filtering (category, price range)
-
--- Deployment (Vercel)
+```
