@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { apiFetch } from "@/lib/api";
 
 type Sweet = {
@@ -21,6 +22,7 @@ function getSweetImage(name: string) {
 }
 
 export default function SweetsPage() {
+  const router = useRouter();
   const [sweets, setSweets] = useState<Sweet[]>([]);
   const [search, setSearch] = useState("");
   const [error, setError] = useState("");
@@ -36,12 +38,8 @@ export default function SweetsPage() {
     }
   }
 
-  async function purchase(id: string) {
-    await apiFetch(`/sweets/${id}/purchase`, {
-      method: "POST",
-      body: JSON.stringify({ quantity: 1 }),
-    });
-    loadSweets(search);
+  function purchase(id: string) {
+    router.push(`/purchase/${id}`);
   }
 
   useEffect(() => {

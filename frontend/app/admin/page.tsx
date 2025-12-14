@@ -64,70 +64,93 @@ export default function AdminPage() {
 
   return (
     <AdminGuard>
-      <div className="p-6 space-y-6">
-        <h1 className="text-2xl font-bold">Admin Panel</h1>
+      <div className="p-6 space-y-10">
+        <h1 className="text-2xl font-bold text-orange-500 text-center">
+          Admin Panel
+        </h1>
 
-        {/* CREATE FORM */}
-        <div className="border p-4 rounded space-y-2">
-          <h2 className="font-semibold">Add Sweet</h2>
+        <div className="flex justify-center">
+          <div className="border rounded p-6 w-full max-w-md space-y-3">
+            <h2 className="font-semibold text-lg text-center">
+              Add Sweet
+            </h2>
 
-          <input
-            placeholder="Name"
-            className="border p-1 w-full"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-          />
-          <input
-            placeholder="Category"
-            className="border p-1 w-full"
-            value={form.category}
-            onChange={(e) => setForm({ ...form, category: e.target.value })}
-          />
-          <input
-            placeholder="Price"
-            className="border p-1 w-full"
-            value={form.price}
-            onChange={(e) => setForm({ ...form, price: e.target.value })}
-          />
-          <input
-            placeholder="Quantity"
-            className="border p-1 w-full"
-            value={form.quantity}
-            onChange={(e) => setForm({ ...form, quantity: e.target.value })}
-          />
+            <input
+              className="w-full border p-2 rounded"
+              placeholder="Name"
+              value={form.name}
+              onChange={(e) =>
+                setForm({ ...form, name: e.target.value })
+              }
+            />
 
-          <button
-            onClick={createSweet}
-            className="bg-black text-white px-4 py-1"
-          >
-            Create
-          </button>
+            <input
+              className="w-full border p-2 rounded"
+              placeholder="Category"
+              value={form.category}
+              onChange={(e) =>
+                setForm({ ...form, category: e.target.value })
+              }
+            />
+
+            <input
+              className="w-full border p-2 rounded"
+              placeholder="Price"
+              value={form.price}
+              onChange={(e) =>
+                setForm({ ...form, price: e.target.value })
+              }
+            />
+
+            <input
+              className="w-full border p-2 rounded"
+              placeholder="Quantity"
+              value={form.quantity}
+              onChange={(e) =>
+                setForm({ ...form, quantity: e.target.value })
+              }
+            />
+
+            <button
+              onClick={createSweet}
+              className="w-full bg-orange-500 text-white py-2 rounded
+                         hover:bg-orange-600 transition"
+            >
+              Create Sweet
+            </button>
+          </div>
         </div>
 
-        {/* SWEETS LIST */}
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {sweets.map((s) => (
             <div
               key={s.id}
-              className="border p-4 rounded flex justify-between items-center"
+              className="border rounded p-4 flex justify-between items-center"
             >
               <div>
                 <p className="font-semibold">{s.name}</p>
-                <p>{s.category}</p>
+                <p className="text-sm text-gray-600">
+                  {s.category}
+                </p>
                 <p>₹{s.price}</p>
-                <p>Stock: {s.quantity}</p>
+                <p className="text-sm">
+                  Stock: {s.quantity}
+                </p>
               </div>
 
-              <div className="space-x-2">
+              <div className="flex gap-2">
                 <button
                   onClick={() => restockSweet(s.id)}
-                  className="bg-green-600 text-white px-3 py-1"
+                  className="bg-orange-500 text-white px-3 py-1 rounded
+                             hover:bg-orange-600 transition"
                 >
                   Restock
                 </button>
+
                 <button
                   onClick={() => deleteSweet(s.id)}
-                  className="bg-red-600 text-white px-3 py-1"
+                  className="bg-red-500 text-white px-3 py-1 rounded
+                             hover:bg-red-600 transition"
                 >
                   Delete
                 </button>
