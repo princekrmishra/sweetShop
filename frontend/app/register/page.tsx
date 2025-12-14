@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import { apiFetch } from "@/lib/api";
 
 export default function RegisterPage() {
@@ -27,34 +29,77 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <form
-        onSubmit={handleRegister}
-        className="w-96 p-6 border rounded space-y-4"
-      >
-        <h1 className="text-xl font-bold">Register</h1>
+    <div className="min-h-screen flex flex-col">
+      {/* TOP HEADER */}
+      <header className="p-4">
+        <span className="text-xl font-bold text-orange-500">
+          Sweet Shop
+        </span>
+      </header>
 
-        {error && <p className="text-red-500">{error}</p>}
+      {/* MAIN CONTENT */}
+      <div className="flex flex-1">
+        {/* LEFT IMAGE */}
+        <div className="hidden md:flex w-1/2 items-center justify-center bg-orange-50">
+          <Image
+            src="/sweet.jpg"
+            alt="Sweet Shop"
+            width={500}
+            height={500}
+            className="object-contain"
+            priority
+          />
+        </div>
 
-        <input
-          className="w-full border p-2"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        {/* RIGHT FORM */}
+        <div className="flex w-full md:w-1/2 items-center justify-center">
+          <form
+            onSubmit={handleRegister}
+            className="w-96 p-6 border rounded space-y-4"
+          >
+            <h1 className="text-2xl font-bold text-center">
+              Register
+            </h1>
 
-        <input
-          className="w-full border p-2"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+            {error && (
+              <p className="text-red-500 text-sm">{error}</p>
+            )}
 
-        <button className="w-full bg-black text-white p-2">
-          Register
-        </button>
-      </form>
+            <input
+              className="w-full border p-2 rounded"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <input
+              className="w-full border p-2 rounded"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <button
+              type="submit"
+              className="w-full bg-orange-500 text-white py-2 rounded
+                         hover:bg-orange-600 transition"
+            >
+              Register
+            </button>
+
+            <p className="text-sm text-center">
+              Already have an account?{" "}
+              <Link
+                href="/login"
+                className="text-orange-500 font-semibold hover:underline"
+              >
+                Login
+              </Link>
+            </p>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
